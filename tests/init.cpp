@@ -18,7 +18,7 @@ SCENARIO("qSort","[sort]")
 	REQUIRE(v[3] == 333);
 	REQUIRE(v[4] == 555);
 	REQUIRE(v[5] == 444);
-	quick_sort(v.begin(), v.end());
+	qSort(v.begin(), v.end());
 	REQUIRE(v[0] == 111);
 	REQUIRE(v[1] == 222);
 	REQUIRE(v[2] == 333);
