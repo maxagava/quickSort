@@ -1,16 +1,28 @@
 #include <qSort.hpp>
+#include <vector>
 #include <catch.hpp>
+using namespace std;
 
 SCENARIO("qSort","[sort]")
 {
- 	int matrix[6] = { 222 , 111, 666, 333, 555, 444 };
-	int sorted_matrix[6] =  { 111, 222, 333, 444, 555, 666 };
-	int* first = &matrix[0];
-	int* second = &matrix[6];
-	qSort(first, second);
-	bool check = NULL;
-	for (int i = 0; i < 6; i++)
-	if (matrix[i] == sorted_matrix[i])
-	check = true;
-	REQUIRE(check == true);
+	vector <int> v;
+	v.push_back(111);
+	v.push_back(222);
+	v.push_back(666);
+	v.push_back(333);
+	v.push_back(555);
+	v.push_back(444);
+	REQUIRE(v[0] == 111);
+	REQUIRE(v[1] == 222);
+	REQUIRE(v[2] == 666);
+	REQUIRE(v[3] == 333);
+	REQUIRE(v[4] == 555);
+	REQUIRE(v[5] == 444);
+	quick_sort(v.begin(), v.end());
+	REQUIRE(v[0] == 111);
+	REQUIRE(v[1] == 222);
+	REQUIRE(v[2] == 333);
+	REQUIRE(v[3] == 444);
+	REQUIRE(v[4] == 555);
+	REQUIRE(v[5] == 666);
 }
